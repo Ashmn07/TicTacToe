@@ -1,16 +1,4 @@
-.square__board {
-  display: grid;
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  gap: 1rem;
-  background: #1e035e;
-  width: 500px;
-  height: 500px;
-}
-.square {
-  display: grid;
-  justify-content: center;
-}
-
 .square__cell {
   background-color: white;
+  font-size: 4rem;
 }
