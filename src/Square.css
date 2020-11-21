@@ -1,17 +1,16 @@
-.square {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 250px;
+.square__board {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 1rem;
+  background: #1e035e;
+  width: 500px;
+  height: 500px;
 }
-
-.square__row {
-  display: flex;
+.square {
+  display: grid;
+  justify-content: center;
 }
 
 .square__cell {
-  border: 1px solid black;
-  height: 70px;
-  width: 70px;
-  border-radius: 5px;
+  background-color: white;
 }
