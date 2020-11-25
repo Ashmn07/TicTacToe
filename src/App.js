@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useRef} from 'react'
+import React,{useState,useEffect} from 'react'
 import './App.css';
 import Square from './Square'
 // import Winner from './Winner';
@@ -33,6 +33,7 @@ function App() {
       setXchance(true);
       alert(`CONGRATSSS !!! The winner is ${winner}`)
     }
+    // eslint-disable-next-line 
   },[squareValues])
 
   // useEffect(()=>{
