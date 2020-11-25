@@ -1,10 +1,13 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useRef} from 'react'
 import './App.css';
 import Square from './Square'
+// import Winner from './Winner';
 
 function App() {
   const [squareValues,setSquareValues] = useState([null,null,null,null,null,null,null,null,null])
   const [Xchance,setXchance] = useState(true)
+  // const winner_temp = useRef(null)
+
 
   function handleClick(id){
     let temp = squareValues.slice();
@@ -14,9 +17,12 @@ function App() {
     setXchance(!Xchance)
   }
 
+  // const displayWinner = winner_temp.current?(<Winner winner={winner_temp.current}/>):null
+
   useEffect(()=>{
     const winner = checkAnswer()
     console.log(winner)
+    // winner_temp.current= winner;
     if(winner==='draw'){
       setSquareValues([null,null,null,null,null,null,null,null,null])
       setXchance(true);
@@ -28,6 +34,10 @@ function App() {
       alert(`CONGRATSSS !!! The winner is ${winner}`)
     }
   },[squareValues])
+
+  // useEffect(()=>{
+  //   displayWinner
+  // },[winner_temp.current])
 
   const checkAnswer = () => {
     const answerOptions = [
@@ -61,6 +71,7 @@ function App() {
     <div className="App">
       <h1>TIC-TAC-TOE</h1>
       <h2>{Xchance?'Player X\'s Turn':'Player O\'s Turn'}</h2>
+      {/* {displayWinner} */}
         <div className="square">
           {squareValues.map((squareValue,index)=>(
             <Square key={index} squareValue={squareValue} onClick={()=> handleClick(index)}/>
